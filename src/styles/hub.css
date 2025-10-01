@@ -1,0 +1,8 @@
+.bar{
+    display: flex;
+    margin-top: auto;
+    background-color: lightgray;
+    width: 320px;
+    height: 100vh;
+    
+}
