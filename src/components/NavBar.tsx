@@ -43,7 +43,7 @@ function NavBar() {
           </div>
         <div className="nav-links">
           <div onClick={handleHome} >Home</div>
-          <div onClick={handleDetais}>Detales</div>              
+          <div onClick={handleDetais}>Detalhes</div>              
           <div onClick={handleLogin}> Login</div>
           <div onClick={handleRegister}>Cadastro</div>
         </div>

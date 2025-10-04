@@ -6,14 +6,12 @@ import Register from './pages/register'
 import './App.css'
 import ListaCard from './components/ListaCard'
 import DetaisAll from './pages/detaisAll'
-import NavBar from './components/NavBar'
-import Footer from './components/Footer'
 
 function App() {
   return (  
-      <div id="app">
-      <NavBar />
-      <div className="routes-container">    
+      // <div id="app">
+        
+       <div className="routes-container">    
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
@@ -23,9 +21,9 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/listacard" element={<ListaCard />} />
       </Routes> 
-      </div>
-      <Footer />
-    </div>     
+       </div> 
+  
+    // </div>     
   
   )
 }

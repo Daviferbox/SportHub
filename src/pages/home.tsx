@@ -21,9 +21,9 @@ const Home = () => {
   };
 
   return (
+    <div className="fundo">
+    <NavBar />
     <div className="home-page">
-      <NavBar />
-
       <div className="title">
         <h1 className="home-title">BEM-VINDO A SPORT HUB!</h1>
       </div>
@@ -40,6 +40,8 @@ const Home = () => {
           </div>
         ))}
       </div>
+     </div>
+      <Footer />
     </div>
   );
 };

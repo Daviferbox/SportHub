@@ -3,8 +3,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #2c3e5098, #1a2530f5);
-    height: 100px;
+    background:  #1a2530;
+    height: 100px;  
     /* Ajustes para fixar no topo */
     width: 100%; /* Garante que ocupe a largura total da tela */
     position: fixed;

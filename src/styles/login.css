@@ -1,7 +1,16 @@
+.fundo{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+
+
 
 .login-card {
   display: flex;
-  position: relative;
   height: 700px;
   width: 64em; /* max-w-4xl */
   margin: 0 auto;
@@ -11,6 +20,8 @@
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  background-color:  #1a2530;
+ 
   
 }  
 
@@ -29,6 +40,7 @@ input{
     width: 350px;
     border-radius: 30px;
     font-size: 15px;
+    background-color: #131b24;
 }
 
 .login-container {
@@ -36,6 +48,7 @@ input{
   flex-direction: column;
   align-items: center; /* Centraliza todos os itens */
   gap: 20px; /* Espaço entre os grupos de input e os botões */
+  
 }
 
 .button-group {
@@ -45,7 +58,8 @@ input{
     margin-top: 2rem; /* Adiciona margem acima do grupo de botões */
     justify-content: center; /* Centraliza os botões */
     width: 100%; /* Opcional: faz o grupo ocupar a largura total do container pai */
-}
+    flex-direction: column;
+  }
 
 .back-button {
   flex: 1; /* Faz os botões dividirem o espaço igualmente */
@@ -56,9 +70,23 @@ input{
 }
 
 /* O estilo do botão pode ser genérico */
-.login-button {
-    background-color: rgba(24, 139, 139, 0.699);
-    height: 80px;
-    width: 280px;
-    font-size: 30px;
+.login {
+  height: 70px;
+  width: 300px;
+  border-radius: 70px;
+  color: aliceblue;
+  background-color: rgb(31, 158, 231);
+  font-size: 18px;
+}
+
+.login:hover{
+  background-color: rgb(39, 181, 216);
+  scale: 0.95;
+  cursor: pointer;
+}
+
+.EsqueceuSenha:hover{
+  cursor: pointer;
+  scale: 0.95;
+  
 }
