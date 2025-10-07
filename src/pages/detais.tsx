@@ -45,6 +45,7 @@ const Detalhes = () => {
         </div>
       </div>
     </div>
+    
   );
 };
 

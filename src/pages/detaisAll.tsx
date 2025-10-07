@@ -1,8 +1,20 @@
 // DetalhesGerais.tsx
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import "../styles/detaisAll.css"
+import type { Produto } from "../types/Products";
+
+// teste produto
+// const [produtos, setProdutos] = useState<Produto[]>([]);
+
+//  useEffect(() => {
+//     fetch("https://fakestoreapi.com/products")
+//       .then(res => res.json())
+//       .then(data => setProdutos(data))
+//       .catch(err => console.error("Erro ao buscar produtos:", err));
+//   }, []);
+
 
 interface Escola {
   nome: string;
@@ -48,7 +60,7 @@ const DetalhesGerais = () => {
 
   return (
     <div className="detalhes-page">
-      <NavBar />
+      <NavBar /><br /><br />
 
       <div className="detalhes-container">
         <h1>Catálogo de Escolas</h1>

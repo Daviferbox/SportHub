@@ -9,7 +9,7 @@ function LoginForm() {
   
   return (
    <div className='fundo'>
-    <NavBar/>
+    <NavBar/><br />
       
       <div className="login-card"> {/* Este é o "card" que envolve tudo */}
           <h2>Login</h2>

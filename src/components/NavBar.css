@@ -55,6 +55,7 @@
     transform: scale(1.4);
     box-shadow: 1px 1px 10px #84baec;
     transform: translateY(-1px);
+    transition: transform 0.3s ease;
    
   }
   

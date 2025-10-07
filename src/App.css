@@ -1,9 +1,11 @@
-#root {
+/* esta comentado pois o footer n estava ficando correto,por causa do root */
+/* #root {
   display: flex;
   margin-top: 80px auto;
   padding: 2rem;
   text-align: center;
-}
+} */
+
 html, body {
   height: 100%;
   margin: 0;
