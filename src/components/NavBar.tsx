@@ -21,6 +21,10 @@ function NavBar() {
     navigate('/detalhesGeral')
   }
 
+  function handleSobre(){
+    navigate('/sobre')
+  }
+
   function handleRegister(){
     navigate('/register')
   }
@@ -44,6 +48,7 @@ function NavBar() {
         <div className="nav-links">
           <div onClick={handleHome} >Home</div>
           <div onClick={handleDetais}>Detalhes</div>              
+          <div onClick={handleSobre}>Sobre</div>              
           <div onClick={handleLogin}> Login</div>
           <div onClick={handleRegister}>Cadastro</div>
         </div>

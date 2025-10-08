@@ -6,6 +6,8 @@ import Register from './pages/register'
 import './App.css'
 import ListaCard from './components/ListaCard'
 import DetaisAll from './pages/detaisAll'
+import Sobre from './pages/sobre'
+
 
 function App() {
   return (  
@@ -20,6 +22,7 @@ function App() {
         <Route path="/detalhesGeral" element={<DetaisAll />} />
         <Route path="/register" element={<Register />} />
         <Route path="/listacard" element={<ListaCard />} />
+        <Route path="/sobre" element={<Sobre />} />
       </Routes> 
        </div> 
   
