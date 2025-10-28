@@ -6,9 +6,9 @@
   align-items: center;
   padding-top: 100px;
 }
-
-
-
+ 
+ 
+ 
 .login-card {
   display: flex;
   height: 700px;
@@ -16,25 +16,25 @@
   margin: 0 auto;
   overflow: hidden;
   border-radius: 1rem;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); 
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   background-color:  #1a2530;
  
-  
+ 
 }  
-
+ 
 h2{
     font-size: 40px;
-} 
+}
 .form-group-email,.form-group-senha{
     padding-top: 3rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: start; 
-    
+    align-items: start;
+   
 }
 input{
     height: 50px;
@@ -45,7 +45,6 @@ input{
     color: aliceblue
 }
 
-
 .login-container {
   display: flex;
   flex-direction: column;
@@ -53,9 +52,9 @@ input{
   gap: 20px; /* Espaço entre os grupos de input e os botões */
   align-items: center;
   justify-content: center;
-  
+ 
 }
-
+ 
 .button-group {
     display: flex; /* Habilita o Flexbox */
     flex-direction: row; /* Alinha os itens na horizontal */
@@ -67,7 +66,7 @@ input{
     align-items: center;
     justify-content: center;
   }
-
+ 
 .back-button {
   flex: 1; /* Faz os botões dividirem o espaço igualmente */
   padding: 10px;
@@ -75,7 +74,7 @@ input{
   cursor: pointer;
   /* ... outros estilos de cor e fonte ... */
 }
-
+ 
 /* O estilo do botão pode ser genérico */
 .login {
   height: 60px;
@@ -86,17 +85,17 @@ input{
   font-size: 18px;
   transition: transform 0.5s ease;
 }
-
+ 
 .login:hover{
   background-color: rgb(39, 181, 216);
   transform: scale(0.95);
   cursor: pointer;
 }
-
+ 
 .EsqueceuSenha{
    transition: transform 0.3s ease;
 }
-
+ 
 .EsqueceuSenha:hover{
   cursor: pointer;
   transform: scale(0.95);

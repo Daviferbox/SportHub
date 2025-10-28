@@ -29,7 +29,9 @@ function Home (){
     <NavBar />
     <div className="home-page">
       <div className="title">
-        <h1 className="home-title">BEM-VINDO A SPORT HUB!</h1>
+        <h1 className="home-title">BEM-VINDO A SPORT HUB! <br />
+          Seu site de pesquisa de Escola Esportiva.
+        </h1>
       </div>
 
       <div className="cards-container">

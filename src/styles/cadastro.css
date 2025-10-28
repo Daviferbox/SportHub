@@ -1,104 +1,112 @@
-/* src/styles/cadastro.css */
-
-.card-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: auto;
-    background-color: #333; /* Ou a cor de fundo que você está usando */
-    border-radius: 25px;
-    box-shadow: 2px 4px 8px rgba(14, 105, 190, 0.589);
-    text-shadow: 10px;
-    padding-top: 100px
-}
-    
-/* Contêiner principal para os grupos de formulário */
-.form-container {
-    display: flex;
-    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
-    gap: 20px; /* Adiciona espaçamento entre os campos */
-    justify-content: center;
-    max-width: 800px; /* Limita a largura para melhor controle */
-}
-
-/* Estilo para cada grupo de label e input */
-.form-group {
-    display: flex;
-    flex-direction: column; /* Alinha o label acima do input */
-    flex: 1 1 200px; /* Permite que o item cresça, encolha e tenha uma largura base */
-    margin-bottom: 6px;
-    border-radius: 20px;
-}
-
-.form-group label {
-    margin-bottom: 5px;
-    font-weight: bolder;
-    color: #fff; /* Ou a cor do texto que você está usando */
-    text-align: start;
-    color: #ffffff;
-}
-
-.form-group input {
-    padding: 10px;
-    border: 1px solid #555;
-    border-radius: 4px;
-    background-color: #444;
-    color: #fff;
-    height: 30px;
-}
-
-.send {
-    margin-top: 20px;
-}
-
-.login-button {
-    padding: 12px 24px;
-    border: none;
-    background-color: #033c79; /* Cor azul, ajuste se necessário */
-    color: white;
-    font-size: 16px;
-    border-radius: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s; /* Adicione uma transição para a sombra */
-    
-    /* Sombra inicial sutil, para dar um efeito de profundidade */
-    box-shadow: 0 2px 4px rgba(247, 247, 247, 0.2);
-    height: 60px;
-}
-
-/* Efeito de hover: quando o mouse passa por cima */
-.login-button:hover {
-    background-color: #1674d8; /* Cor um pouco mais escura */
-    
-    /* Aumenta a sombra para simular um "flutuação" */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-}
-
-/* Opcional: Efeito de click (estado ativo) */
-.login-button:active {
-    /* Diminui a sombra para dar a impressão de que o botão foi pressionado */
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-    transform: translateY(1px); /* Move o botão 1px para baixo */
-}
-.register-container {
+.registro-container {
   display: flex;
-  height: 100vh; /* ocupa altura total da tela */
+  height: 100vh;
+  background: #f8f8f8;
+  font-family: "Poppins", sans-serif;
 }
 
-.form-side {
-  flex: 1; /* metade da tela */
+/* Lado esquerdo com imagem */
+.registro-info {
+  flex: 1;
+  background: url("/src/assets/809af1d0-e1e7-496a-8635-2176dbba67c0.png") center/cover no-repeat;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Camada escura translúcida para contraste */
+.overlay {
+  background: #1a2530;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 2rem;
+}
+
+.overlay h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* Lado direito */
+.registro-form {
+  flex: 1;
+  background: #dddddd;
+  padding: 3rem 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  border-radius: 0 12px 12px 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  text-decoration: #4b4b4b;
 }
 
-.image-side {
-  flex: 1; /* metade da tela */
+.registro-form h3 {
+  color: #000000;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
 }
 
-.image-side img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* preenche mantendo proporção */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+input,
+select {
+  padding: 0.9rem 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background-color: #585858;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #1a2530;
+  background-color: #8b8b8b;
+}
+
+button {
+  margin-top: 1rem;
+  background: #04213b;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #243555;
+}
+
+@media (max-width: 900px) {
+  .registro-container {
+    flex-direction: column;
+  }
+
+  .overlay {
+    height: 40vh;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
 }

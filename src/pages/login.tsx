@@ -7,6 +7,7 @@ import type { Usuarios } from '../types/Usuarios';
 
 
 function LoginForm() {
+
   const [senha, setSenha] = useState('');
   const [email, setEmail] = useState('');
 
@@ -32,6 +33,7 @@ function LoginForm() {
         setUsuarios(dataArray);    
     }   
 
+
   
   return (
    <div className='fundo'>
@@ -49,9 +51,10 @@ function LoginForm() {
           </div>
             <div className="login-container">
                 <div className="button-group">
+
                   <button className='login' onClick={login}>Login</button>  
                   <div className='EsqueceuSenha'>Esqueceu a senha?</div>
-               
+
                 </div>
             </div>
       </div><br /><br /><br />
