@@ -45,6 +45,7 @@ input{
     color: aliceblue
 }
 
+
 .login-container {
   display: flex;
   flex-direction: column;
@@ -100,4 +101,13 @@ input{
   cursor: pointer;
   transform: scale(0.95);
   
+}
+
+.form-group-email,.form-group-senha{
+    transition: transform 0.3s ease;
+    
+}
+
+.form-group-email:hover,.form-group-senha:hover{
+   transform: scale(1.05);   
 }

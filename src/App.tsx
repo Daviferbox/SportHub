@@ -7,6 +7,8 @@ import './App.css'
 import ListaCard from './components/ListaCard'
 import DetaisAll from './pages/detaisAll'
 import Sobre from './pages/sobre'
+import Requisicoes from './pages/requisition'
+import RequisicaoPost from './pages/requisitionPost'
 
 
 function App() {
@@ -23,6 +25,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/listacard" element={<ListaCard />} />
         <Route path="/sobre" element={<Sobre />} />
+         <Route path="/requisitionTypes" element={<Requisicoes />} />
+          <Route path="/requisitionPost" element={<RequisicaoPost />} />
       </Routes> 
        </div> 
   

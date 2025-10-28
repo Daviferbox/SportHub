@@ -5,15 +5,19 @@ import Footer from "../components/Footer";
 import "../styles/Home.css";
 import type { Card } from "../types/cards";
 
-const cards: Card[] = [
+
+
+function Home (){
+  
+  
+  const cards: Card[] = [
   { id: 1, title: "Futebol", img: "/src/assets/futebol.jpg" },
   { id: 2, title: "Basquete", img: "/src/assets/basquete.jpg" },
   { id: 3, title: "Natação", img: "/src/assets/natacao.jpg" },
   { id: 4, title: "Tênis", img: "/src/assets/tenis.jpg" },
   { id: 5, title: "Corrida", img: "/src/assets/corrida.jpg" },
 ];
-
-const Home = () => {
+  
   const navigate = useNavigate();
 
   const handleCardClick = (card: Card) => {
