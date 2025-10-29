@@ -44,7 +44,8 @@ input{
     background-color: #131b24;
     color: aliceblue
 }
-
+ 
+ 
 .login-container {
   display: flex;
   flex-direction: column;
@@ -92,21 +93,38 @@ input{
   cursor: pointer;
 }
  
-.EsqueceuSenha{
-   transition: transform 0.3s ease;
+.EsqueceuSenha {
+  display: flex;
+  justify-content: center;   /* Centraliza horizontalmente */
+  align-items: center;       /* Centraliza verticalmente */
+  gap: 20px;                 /* Espaço entre os links */
+  margin-top: 10px;
+}
+
+.EsqueceuSenha a {
+  color: white;              /* Cor padrão */
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Específico para o link "Esqueceu a senha?" */
+.EsqueceuSenha a.esqueceu:hover {
+  color: red;                /* Fica vermelho ao passar o mouse */
+  transform: scale(0.95);
+}
+
+/* Específico para o link "Cadastrar" */
+.EsqueceuSenha a.cadastrar:hover {
+  color: #00aaff;            /* Fica azul ao passar o mouse */
+  transform: scale(0.95);
 }
  
-.EsqueceuSenha:hover{
-  cursor: pointer;
-  transform: scale(0.95);
-  
-}
-
 .form-group-email,.form-group-senha{
     transition: transform 0.3s ease;
-    
+   
 }
-
+ 
 .form-group-email:hover,.form-group-senha:hover{
-   transform: scale(1.05);   
+   transform: scale(1.05);  
 }

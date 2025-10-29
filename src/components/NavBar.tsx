@@ -25,9 +25,9 @@ function NavBar() {
     navigate('/sobre')
   }
 
-  function handleRegister(){
-    navigate('/register')
-  }
+  // function handleRegister(){
+  //   navigate('/register')
+  // }
 
   return (
     <div className="bar">
@@ -50,7 +50,7 @@ function NavBar() {
           <div onClick={handleDetais}>Detalhes</div>              
           <div onClick={handleSobre}>Sobre</div>              
           <div onClick={handleLogin}> Login</div>
-          <div onClick={handleRegister}>Cadastro</div>
+          {/* <div onClick={handleRegister}>Cadastro</div> */}
         </div>
          
       </nav>
