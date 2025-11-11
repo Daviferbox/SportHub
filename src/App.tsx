@@ -10,6 +10,7 @@ import Sobre from './pages/sobre'
 import Requisicoes from './pages/requisition'
 import RequisicaoPost from './pages/requisitionPost'
 import Manager from './pages/manager'
+import RedefinirSenha from './pages/redefinirSenha'
 import RegistroForm from './pages/register'
 
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/sobre" element={<Sobre />} />
         <Route path="/requisitionTypes" element={<Requisicoes />} />
         <Route path="/requisitionPost" element={<RequisicaoPost />} />
+        <Route path="/redefinirSenha" element={<RedefinirSenha />} />
       </Routes> 
        </div> 
   
