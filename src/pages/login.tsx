@@ -66,7 +66,7 @@ function LoginForm() {
                
                 </div>
             </div>
-      </div><br /><br /><br />
+      </div><br /><br />
    
        <Footer/>
     </div>  

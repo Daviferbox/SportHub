@@ -2,7 +2,6 @@ import {  Routes, Route } from 'react-router-dom'
 import Home from './pages/home'
 import Login from './pages/login'
 import Detais from './pages/detais'
-import Register from './pages/register'
 import './App.css'
 import ListaCard from './components/ListaCard'
 import DetaisAll from './pages/detaisAll'
@@ -11,6 +10,7 @@ import Sobre from './pages/sobre'
 import Requisicoes from './pages/requisition'
 import RequisicaoPost from './pages/requisitionPost'
 import Manager from './pages/manager'
+import RegistroForm from './pages/register'
 
 
 function App() {
@@ -24,7 +24,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/detalhes/:id" element={<Detais />} />
         <Route path="/detalhesGeral" element={<DetaisAll />} />
-        <Route path="/register" element={<Register />} />
+        <Route path="/register" element={<RegistroForm />} />
         <Route path="/manager" element={<Manager />} />
         <Route path="/listacard" element={<ListaCard />} />
         <Route path="/sobre" element={<Sobre />} />

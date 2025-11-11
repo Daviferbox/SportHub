@@ -7,8 +7,6 @@
   padding-top: 100px;
 }
  
- 
- 
 .login-card {
   display: flex;
   height: 700px;
@@ -33,9 +31,9 @@ h2{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: start;
-   
+    align-items: start;  
 }
+
 input{
     height: 50px;
     width: 350px;

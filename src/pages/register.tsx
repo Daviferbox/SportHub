@@ -1,62 +1,58 @@
 import { useState } from "react";
 import NavBar from "../components/NavBar";
 import "../styles/register.css";
+import Footer from "../components/Footer";
 
 function RegistroForm() {
-  const [nome, setNome] = useState("");
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
-
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    const dados = { nome, email, senha };
-    console.log("Dados enviados:", dados);
-  };
+ 
 
   return (
-    <>
+    <div className="fundo">
       <NavBar />
-      <div className="registro-container">
-        <div className="registro-info">
-          <div className="overlay">
-            <h2>
-              Cadastre-se para obter<br />
-              seu anúncio personalizado<br />
-              de forma rápida e fácil.
-            </h2>
+      <br />  
+
+       <div className="register-card"> {/* Este é o "card" que envolve tudo */}
+          <h2>Cadastro</h2>
+      <div className="informacoes">
+          <div className="form-group-register">
+            <div className="form-group-nome">
+                Nome da instituição <br />
+                <input type="text" placeholder="Digite o nome da instituição" />
+            </div>
+       
+            <div className="form-group-responsavel">
+                Nome do responsavel <br />
+                <input type="text" placeholder="Digite o nome do responsavel" />
+            </div>
           </div>
-        </div>
+          
+          <br /><br />
+          <div className="form-group-dados">
+            <div className="form-group-email">
+                E-mail
+                <input type="email" placeholder="Digite um e-mail" />
+            </div>
 
-        <div className="registro-form">
-          <h2>Preencha seus dados</h2>
+            <div className="form-group-senha">
+                Senha
+                <input type="password" id="password" placeholder="Sua senha" />
+            </div>
+          </div>
+        </div> <br />
 
-          <form onSubmit={handleSubmit}>
-            <input
-              type="text"
-              placeholder="Nome"
-              value={nome}
-              onChange={(e) => setNome(e.target.value)}
-              required
-            />
-            <input
-              type="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
-            <input
-              type="password"
-              placeholder="Senha"
-              value={senha}
-              onChange={(e) => setSenha(e.target.value)}
-              required
-            />
-            <button type="submit">Prosseguir</button>
-          </form>
-        </div>
+            <div className="login-container">
+
+                <div className="button-group">
+
+                  <button className='login' >Cadastrar-se</button>  
+            
+                </div>
+
+            </div>
       </div>
-    </>
+       <br /> <br />
+    <Footer/>
+    </div>
   );
 }
 
