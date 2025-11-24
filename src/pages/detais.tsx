@@ -1,7 +1,6 @@
 // Detalhes.tsx
 import { useLocation, useParams } from "react-router-dom";
 import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
 import type { Card } from "../types/cards";
 
 interface DetalhesEsporte {

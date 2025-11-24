@@ -3,8 +3,7 @@ import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import { useNavigate } from "react-router-dom";
 import '../styles/login.css';
-import { api } from '../api';
-import type { Usuarios } from '../types/Usuarios';
+
  
  
 function LoginForm() {
@@ -14,10 +13,10 @@ function LoginForm() {
   const navigate = useNavigate();
  
  
-  const [usuarios , setUsuarios] = useState<Usuarios[]>([]);
+  // const [usuarios , setUsuarios] = useState<Usuarios[]>([]);
  
  
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
  
   const handleSenhaChange = (e: ChangeEvent<HTMLInputElement>) => {
           setSenha(e.target.value)

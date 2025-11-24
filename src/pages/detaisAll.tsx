@@ -1,9 +1,8 @@
 // DetalhesGerais.tsx
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
 import "../styles/detaisAll.css"
-import type { Produto } from "../types/Products";
+
 
 // teste produto
 // const [produtos, setProdutos] = useState<Produto[]>([]);

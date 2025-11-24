@@ -1,13 +1,15 @@
 export const api = {
-    AdicionarUsuarios: async (title: string, body: string, userID: string) =>{
-        let response = await fetch('https://jsonplaceholder.typicode.com/posts',
+    AdicionarUsuarios: async (nomeUsuario: string, emailUsuario: string,senhaUsuario: string,contatoUsuario: string) =>{
+        let response = await fetch('https://localhost:3000/usuarios',
         {
             method: 'POST',
             body: JSON.stringify
             ({
-                title, 
-                body, 
-                userID}),
+                NOME: nomeUsuario,
+                EMAIL: emailUsuario, 
+                SENHA:senhaUsuario,
+                CONTATO: contatoUsuario
+            }),
             headers:{
                 'Content-Type': 'application/json'
             }
@@ -32,15 +34,15 @@ export const api = {
     },
 
 
-    CarregarLogin: async(email: string, senha:string) => {
+    CarregarLogin: async( emailUsuario: string, senhaUsuario:string) => {
         {
-            let response = await fetch('http://localhost:3010/usuarios/login',
+            let response = await fetch('https://localhost:3000/usuarios/login',
                 {
                        method: 'POST',
             body: JSON.stringify
             ({
-                email, 
-                senha}),
+                EMAIL: emailUsuario, 
+                SENHA:senhaUsuario,}),
             headers:{
                 'Content-Type': 'application/json'
             }

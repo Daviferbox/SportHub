@@ -1,13 +1,13 @@
-import { useLocation, useNavigate, useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './NavBar.css';
 import { useState } from 'react'; // Importa o useState para controlar o input
 
 function NavBar() {
-  const location = useLocation();
+  // const location = useLocation();
   
   const [searchTerm, setSearchTerm] = useState(''); // Estado para o termo de pesquisa
 
-    const params = useParams()
+    // const params = useParams()
   const navigate = useNavigate()
 
   function handleHome(){
