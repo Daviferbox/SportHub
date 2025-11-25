@@ -3,12 +3,14 @@ import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import { useNavigate } from "react-router-dom";
 import '../styles/login.css';
+import { api } from '../api';
 
  
  
 function LoginForm() {
   const [senha, setSenha] = useState('');
   const [email, setEmail] = useState('');
+   const [loading, setLoading] = useState(false);
   
   const navigate = useNavigate();
  
@@ -27,12 +29,22 @@ function LoginForm() {
       }
  
   const handleLogin = async () => {        
-        // setLoading(true);
-        // let json = await api.CarregarLogin(email,senha);      
-        // const dataArray = Array.isArray(json) ? json: [json]
-        // setLoading(false);
-        // setUsuarios(dataArray);  
-        navigate('/manager')  
+        try {
+              setLoading(true);
+        
+              const json = await api.CarregarLogin( email,senha);
+        
+              // Apenas organiza o retorno
+              const dataArray = Array.isArray(json) ? json : [json];
+        
+              console.log("Login feito com sucesso:", dataArray);
+        
+            } catch (error) {
+                console.error("Erro para o login do usuario:", error);
+                alert("Ocorreu um erro ao login. Tente novamente.");
+            } finally {
+                setLoading(false);
+            }  
     }  
 
   
