@@ -1,14 +1,14 @@
 export const api = {
     AdicionarUsuarios: async (nomeUsuario: string, emailUsuario: string,senhaUsuario: string,contatoUsuario: string) =>{
-        let response = await fetch('https://localhost:3000/usuarios',
+        let response = await fetch('http://localhost:3000/usuarios/criacao',
         {
             method: 'POST',
             body: JSON.stringify
             ({
                 NOME: nomeUsuario,
                 EMAIL: emailUsuario, 
-                SENHA:senhaUsuario,
-                CONTATO: contatoUsuario
+                CONTATO: contatoUsuario,
+                SENHA:senhaUsuario
             }),
             headers:{
                 'Content-Type': 'application/json'
@@ -54,6 +54,32 @@ export const api = {
             return json;
             
     }
+  },
+
+    AdicionarEvento: async( nomeEvento: string,descricaoEvento:string,horarioEvento: string,diaEvento:string,localEvento: string,idadeEvento:string,esporteEvento: string) => {
+        let response = await fetch('https://localhost:3000/eventos',
+                {
+                       method: 'POST',
+            body: JSON.stringify
+            ({
+                NOME: nomeEvento,
+                DESCRICAO: descricaoEvento,
+                HORARIO: horarioEvento,
+                DIA: diaEvento,
+                LOCAL: localEvento,
+                IDADE: idadeEvento,
+                ESPORTE: esporteEvento
+                }),
+            headers:{
+                'Content-Type': 'application/json'
+            }
+                }
+            );
+            let json = await response.json();
+
+            console.log(json);
+            return json;
+
   }
 }
 

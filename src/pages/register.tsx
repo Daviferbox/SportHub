@@ -4,6 +4,7 @@ import Footer from "../components/Footer";
 import { useState, type ChangeEvent } from "react";
 import { api } from "../api";
 import Loading from "../components/Loading";
+import { useNavigate } from "react-router-dom";
 
 function RegistroForm() {
       const [nome, setNome] = useState('');
@@ -11,6 +12,17 @@ function RegistroForm() {
       const [contato, setContato] = useState('');
       const [senha, setSenha] = useState('');
       const [loading, setLoading] = useState(false);
+
+      const navigate = useNavigate();
+
+
+      const formatarTelefone = (tel: string) => {
+    return tel
+      .replace(/\D/g, '')               
+      .replace(/(\d{2})(\d)/, '($1) $2')
+      .replace(/(\d{5})(\d)/, '$1-$2')
+      .slice(0, 15);
+  };
 
       const handleNomeChange = (e: ChangeEvent<HTMLInputElement>) => {
                 setNome(e.target.value)
@@ -33,18 +45,26 @@ function RegistroForm() {
     try {
         setLoading(true);
 
-        const json = await api.AdicionarUsuarios(nome, email, contato, senha);
+        const telefoneFormatado = formatarTelefone(contato);
+
+        const json = await api.AdicionarUsuarios(nome, email,telefoneFormatado, senha);
 
         // Apenas organiza o retorno
         const dataArray = Array.isArray(json) ? json : [json];
 
-        console.log("Usuário criado:", dataArray);
 
+        if(json.data){
+          console.log("Usuário criado:", dataArray);
+          console.log(json.message)
+          navigate('/login')
+        }
     } catch (error) {
         console.error("Erro ao criar usuário:", error);
         alert("Ocorreu um erro ao cadastrar. Tente novamente.");
+        
     } finally {
         setLoading(false);
+        
     }
 };
        
