@@ -2,18 +2,7 @@
 import {  useState } from "react";
 import NavBar from "../components/NavBar";
 import "../styles/detaisAll.css"
-
-
-// teste produto
-// const [produtos, setProdutos] = useState<Produto[]>([]);
-
-//  useEffect(() => {
-//     fetch("https://fakestoreapi.com/products")
-//       .then(res => res.json())
-//       .then(data => setProdutos(data))
-//       .catch(err => console.error("Erro ao buscar produtos:", err));
-//   }, []);
-
+import Footer from "../components/Footer";
 
 interface Escola {
   nome: string;
@@ -100,6 +89,8 @@ const DetalhesGerais = () => {
           </div>
         ))}
       </div>
+      <br /><br />
+      <Footer />
     </div>
   );
 };

@@ -1,34 +1,126 @@
-.detalhes-container{
-  display: grid;
-  margin-top: 44px;
-  width: 100%;
+/* ================================
+   CONTAINER PRINCIPAL
+================================ */
+.detalhes-page {
+
+  min-height: 100vh;
+  color: #ffffff;
+  
 }
 
+.detalhes-container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 80px auto 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.detalhes-container h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4cc9ff;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* ================================
+   FILTRO
+================================ */
 .filtro-container {
-  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  color: #d9d9d9;
 }
 
 .filtro-container select {
-  padding: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  background: #1A2430;
+  color: #ffffff;
+  border: 2px solid #1e293b;
   font-size: 1rem;
-  margin-left: 0.5rem;
+  transition: 0.2s;
 }
 
+.filtro-container select:hover {
+  border-color: #4cc9ff;
+  box-shadow: 0 0 8px #4cc9ff99;
+}
+
+/* ================================
+   BLOCO DE ESPORTE
+================================ */
 .esporte-bloco {
-  margin-top: 2rem;
-  text-align: left;
+  margin-top: 1.5rem;
 }
 
+.esporte-bloco h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #4cc9ff;
+  border-left: 4px solid #4cc9ff;
+  padding-left: 8px;
+}
+
+/* ================================
+   GRID DE ESCOLAS
+================================ */
 .escolas-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
-  margin-top: 1rem;
 }
 
+/* ================================
+   CARD DA ESCOLA
+================================ */
 .escola-card {
-  background: #000000;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background: #1A2430;
+  border-radius: 14px;
+  padding: 1.2rem;
+  border: 1px solid #1f2937;
+  transition: 0.25s ease;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.25);
+}
+
+.escola-card:hover {
+  transform: translateY(-4px);
+  border-color: #4cc9ff;
+  box-shadow: 0 0 15px #4cc9ff55;
+}
+
+.escola-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.escola-card p {
+  font-size: 0.95rem;
+  margin: 4px 0;
+  color: #d1d5db;
+}
+
+.escola-card strong {
+  color: #4cc9ff;
+}
+
+/* ================================
+   RESPONSIVIDADE
+================================ */
+@media (max-width: 600px) {
+  .detalhes-container {
+    margin-top: 60px;
+  }
+
+  .filtro-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
 }
