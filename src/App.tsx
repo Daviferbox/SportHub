@@ -6,12 +6,15 @@ import './App.css'
 import ListaCard from './components/ListaCard'
 import DetaisAll from './pages/detaisAll'
 import Sobre from './pages/sobre'
-
 import Requisicoes from './pages/requisition'
 import RequisicaoPost from './pages/requisitionPost'
 import Manager from './pages/manager'
 import RedefinirSenha from './pages/redefinirSenha'
 import RegistroForm from './pages/register'
+import CadastroEscola from './pages/cadastroEscola'
+import EscolhaCadastro from './pages/escolhaCadastro'
+import CadastroEvento from './pages/cadastroEvento'
+
 
 
 function App() {
@@ -32,6 +35,9 @@ function App() {
         <Route path="/requisitionTypes" element={<Requisicoes />} />
         <Route path="/requisitionPost" element={<RequisicaoPost />} />
         <Route path="/redefinirSenha" element={<RedefinirSenha />} />
+        <Route path='/escolher-cadastro' element={<EscolhaCadastro />} />
+        <Route path='/cadastrar-escola' element={<CadastroEscola />} />
+        <Route path='/cadastrar-evento' element={<CadastroEvento />} />
       </Routes> 
        </div> 
   

@@ -1,6 +1,7 @@
 // src/components/Footer.tsx
 import { MapPin, Phone, Mail } from "lucide-react";
 import "../components/Footer.css";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -14,6 +15,12 @@ const Footer = () => {
           <p><Phone size={16}/> (14) 99999-9999   <a href="https://wa.me/5514998088310">Fale Conosco</a></p>
           <p><Mail size={16}/> contato@sporthub.com</p>
         </div>
+      </div>
+
+      <div className="footer-menu">
+        <Link to="/escolher-cadastro" className="footer-link">
+        Adicionar Eventos / Escolas
+        </Link>
       </div>
 
       <div className="footer-bottom">

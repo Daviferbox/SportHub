@@ -31,3 +31,18 @@
   padding-top: 1rem;
   font-size: 0.9rem;
 }
+
+.footer-menu {
+  margin-top: 15px;
+}
+
+.footer-link {
+  color: #00b4ff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-link:hover {
+  color: #00b4ff
+}

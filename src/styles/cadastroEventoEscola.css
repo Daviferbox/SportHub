@@ -1,0 +1,85 @@
+body {
+  font-family: 'Inter', sans-serif;
+  color: white;
+}
+ 
+/* Container geral */
+.page-container {
+  padding: 40px;
+  max-width: 700px;
+  margin: auto;
+}
+ 
+/* Card padrão */
+.card {
+  background-color: #144272;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #00000040;
+}
+ 
+/* Títulos */
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #2A9EE7;
+}
+ 
+/* Inputs padrão */
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 20px;
+  background-color: #122e53;
+  color: white;
+  font-size: 15px;
+}
+ 
+input::placeholder, textarea::placeholder {
+  color: #d4d4d4;
+}
+ 
+/* Botões */
+button {
+  width: 100%;
+  padding: 15px;
+  background-color: #2A9EE7;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  transition: 0.3s;
+}
+ 
+button:hover {
+  opacity: 0.85;
+}
+ 
+/* Botões lado a lado */
+.btn-row {
+  display: flex;
+  gap: 20px;
+}
+ 
+.btn-row button {
+  flex: 1;
+}
+ 
+/* Checkboxes dias semana */
+.checkbox-group {
+  background-color: #205295;
+  padding: 15px;
+  border-radius: 10px;
+}
+ 
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+ 
