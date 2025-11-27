@@ -6,8 +6,6 @@ import './App.css'
 import ListaCard from './components/ListaCard'
 import DetaisAll from './pages/detaisAll'
 import Sobre from './pages/sobre'
-import Requisicoes from './pages/requisition'
-import RequisicaoPost from './pages/requisitionPost'
 import Manager from './pages/manager'
 import RedefinirSenha from './pages/redefinirSenha'
 import RegistroForm from './pages/register'
@@ -32,8 +30,6 @@ function App() {
         <Route path="/manager" element={<Manager />} />
         <Route path="/listacard" element={<ListaCard />} />
         <Route path="/sobre" element={<Sobre />} />
-        <Route path="/requisitionTypes" element={<Requisicoes />} />
-        <Route path="/requisitionPost" element={<RequisicaoPost />} />
         <Route path="/redefinirSenha" element={<RedefinirSenha />} />
         <Route path='/escolher-cadastro' element={<EscolhaCadastro />} />
         <Route path='/cadastrar-escola' element={<CadastroEscola />} />

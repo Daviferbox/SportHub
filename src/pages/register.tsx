@@ -1,10 +1,75 @@
-import { useState } from "react";
 import NavBar from "../components/NavBar";
 import "../styles/register.css";
 import Footer from "../components/Footer";
+import { useState, type ChangeEvent } from "react";
+import { api } from "../api";
+import Loading from "../components/Loading";
+import { useNavigate } from "react-router-dom";
 
 function RegistroForm() {
- 
+      const [nome, setNome] = useState('');
+      const [email, setEmail] = useState('');
+      const [contato, setContato] = useState('');
+      const [senha, setSenha] = useState('');
+      const [loading, setLoading] = useState(false);
+
+      const navigate = useNavigate();
+
+
+      const formatarTelefone = (tel: string) => {
+    return tel
+      .replace(/\D/g, '')               
+      .replace(/(\d{2})(\d)/, '($1) $2')
+      .replace(/(\d{5})(\d)/, '$1-$2')
+      .slice(0, 15);
+  };
+
+      const handleNomeChange = (e: ChangeEvent<HTMLInputElement>) => {
+                setNome(e.target.value)
+            }
+
+      const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {  
+                setEmail(e.target.value)
+            }
+
+      const handleContatoChange = (e: ChangeEvent<HTMLInputElement>) => {
+                setContato(e.target.value)
+            }
+
+
+      const handleSenhaChange = (e: ChangeEvent<HTMLInputElement>) => {
+                setSenha(e.target.value)
+            }
+
+    const handleCriar = async () => {
+    try {
+        setLoading(true);
+
+        const telefoneFormatado = formatarTelefone(contato);
+
+        const json = await api.AdicionarUsuarios(nome, email,telefoneFormatado, senha);
+
+        // Apenas organiza o retorno
+        const dataArray = Array.isArray(json) ? json : [json];
+
+
+        if(json.data){
+          console.log("Usuário criado:", dataArray);
+          console.log(json.message)
+          navigate('/login')
+        }
+    } catch (error) {
+        console.error("Erro ao criar usuário:", error);
+        alert("Ocorreu um erro ao cadastrar. Tente novamente.");
+        
+    } finally {
+        setLoading(false);
+        
+    }
+};
+       
+        
+        
 
   return (
     <div className="fundo">
@@ -17,12 +82,12 @@ function RegistroForm() {
           <div className="form-group-register">
             <div className="form-group-nome">
                 Nome da instituição <br />
-                <input type="text" placeholder="Digite o nome da instituição" />
+                <input type="text" value={nome} onChange={handleNomeChange} placeholder="Digite o nome da instituição" />
             </div>
        
             <div className="form-group-responsavel">
-                Nome do responsavel <br />
-                <input type="text" placeholder="Digite o nome do responsavel" />
+                Contato <br />
+                <input type="text" value={contato} onChange={handleContatoChange} placeholder="Digite o telefone da empresa" />
             </div>
           </div>
           
@@ -30,25 +95,27 @@ function RegistroForm() {
           <div className="form-group-dados">
             <div className="form-group-email">
                 E-mail
-                <input type="email" placeholder="Digite um e-mail" />
+                <input type="email" value={email} onChange={handleEmailChange} placeholder="Digite um e-mail" />
             </div>
 
             <div className="form-group-senha">
                 Senha
-                <input type="password" id="password" placeholder="Sua senha" />
+                <input type="password" value={senha} onChange={handleSenhaChange} id="password" placeholder="Sua senha" />
             </div>
           </div>
         </div> <br />
 
-            <div className="login-container">
+            <div className="button-group">
+              {loading && <Loading />}
+                    <button 
+                      className="login"
+                      onClick={handleCriar}
+                      disabled={loading}
+                    >
+                      {loading ? "Carregando..." : "Cadastrar-se"}
+                    </button>
 
-                <div className="button-group">
-
-                  <button className='login' >Cadastrar-se</button>  
-            
-                </div>
-
-            </div>
+                  </div>
       </div>
        <br /> <br />
     <Footer/>
