@@ -1,5 +1,7 @@
 export const api = {
-    AdicionarUsuarios: async (nomeUsuario: string, emailUsuario: string,senhaUsuario: string,contatoUsuario: string) =>{
+    // Usuarios
+    
+    AdicionarUsuarios: async (nomeUsuario: string, emailUsuario: string,contatoUsuario: string,senhaUsuario: string,) =>{
         let response = await fetch('http://localhost:3000/usuarios/criacao',
         {
             method: 'POST',
@@ -21,18 +23,6 @@ export const api = {
         return json;
     },
     
-    CarregarTodosUsuarios: async () => {
-        let response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
-        let json = await response.json();
-        return json
-    },
-
-    CarregarUnicoUsuario: async (param: string) => {
-        let response = await fetch('https://jsonplaceholder.typicode.com/todos/1' + param);
-        let json = await response.json();
-        return json;
-    },
-
 
     CarregarLogin: async( emailUsuario: string, senhaUsuario:string) => {
         {
@@ -55,6 +45,21 @@ export const api = {
             
     }
   },
+
+  RemoverUsuario: async (id: string) => {
+  const response = await fetch(`http://localhost:3000/usuarios/${id}`, {
+    method: 'DELETE'
+  });
+
+  const json = await response.json();
+  console.log(json);
+  return json;
+},
+
+// Usuarios
+
+
+// Eventos
 
     AdicionarEvento: async( nomeEvento: string,descricaoEvento:string,horarioEvento: string,diaEvento:string,localEvento: string,idadeEvento:string,esporteEvento: string) => {
         let response = await fetch('https://localhost:3000/eventos',
@@ -80,6 +85,53 @@ export const api = {
             console.log(json);
             return json;
 
-  }
+  },
+
+
+
+
+//   Eventos
+
+
+// Escolas
+AdicionarEscola: async( nomeEscola: string,horarioEscola: string,diaEscola:string,localEscola: string,faixaEtariaEscola:string,esporteEscola: string) => {
+        let response = await fetch('https://localhost:3000/escola/criar',
+                {
+                       method: 'POST',
+            body: JSON.stringify
+            ({
+                NOME: nomeEscola,
+                HORARIO: horarioEscola,
+                DIA: diaEscola,
+                LOCAL: localEscola,
+                FAIXAETARIA: faixaEtariaEscola,
+                ESPORTE: esporteEscola
+                }),
+            headers:{
+                'Content-Type': 'application/json'
+            }
+                }
+            );
+            let json = await response.json();
+
+            console.log(json);
+            return json;
+
+  },
+
+
+
+
+
+
+
+// Escolas
+
+
+  
+
+
 }
+
+
 

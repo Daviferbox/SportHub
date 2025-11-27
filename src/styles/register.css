@@ -7,14 +7,17 @@
   padding-top: 100px;
 }
 
-input{
+input {
     height: 50px;
-    width: 350px;
+    width: 100%;     /* faz todos os inputs ficarem iguais */
     border-radius: 30px;
     font-size: 15px;
     background-color: #131b24;
-    color: aliceblue
+    color: aliceblue;
+    padding: 0 20px; /* deixa a borda interna igual em todos */
+    box-sizing: border-box;
 }
+
 
 .register-card {
   display: flex;
@@ -34,12 +37,13 @@ h2{
     font-size: 40px;
 }
 
-.informacoes{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
+.informacoes {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
 }
+
 
 .form-group-register,.form-group-dados{
   display: flex;
@@ -61,6 +65,37 @@ h2{
 .form-group-email:hover,.form-group-senha:hover,.form-group-nome:hover,.form-group-responsavel:hover{
    transform: scale(1.05);  
 }
+
+
+.form-group-senha {
+    position: relative;
+    width: 100%;
+}
+
+.input-senha {
+    padding-right: 45px; /* espaço pro ícone */
+}
+
+
+
+.eye-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+
+
+
+.form-group-nome,
+.form-group-responsavel,
+.form-group-email,
+.form-group-senha {
+    width: 350px;  /* ou qualquer valor que quiser */
+}
+
+
 
    
 

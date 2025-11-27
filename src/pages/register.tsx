@@ -12,6 +12,8 @@ function RegistroForm() {
       const [contato, setContato] = useState('');
       const [senha, setSenha] = useState('');
       const [loading, setLoading] = useState(false);
+      const [mostrarSenha, setMostrarSenha] = useState(false);
+
 
       const navigate = useNavigate();
 
@@ -57,6 +59,7 @@ function RegistroForm() {
           console.log("Usuário criado:", dataArray);
           console.log(json.message)
           navigate('/login')
+          alert('Usuario cadastrado com sucesso')
         }
     } catch (error) {
         console.error("Erro ao criar usuário:", error);
@@ -98,11 +101,23 @@ function RegistroForm() {
                 <input type="email" value={email} onChange={handleEmailChange} placeholder="Digite um e-mail" />
             </div>
 
-            <div className="form-group-senha">
-                Senha
-                <input type="password" value={senha} onChange={handleSenhaChange} id="password" placeholder="Sua senha" />
-            </div>
-          </div>
+           <div className="form-group-senha" style={{ position: "relative", width: "100%" }}>
+                      <label>Senha</label>
+
+                      <input
+                            className="input-senha"
+                            type={mostrarSenha ? "text" : "password"}
+                            value={senha}
+                            onChange={handleSenhaChange}
+                            placeholder="Sua senha"
+                        />
+
+                        <span className="eye-icon" onClick={() => setMostrarSenha(!mostrarSenha)}>
+                            {mostrarSenha ? "👁️‍🗨️" : "👁️"}
+                        </span>
+
+                  </div>
+               </div>
         </div> <br />
 
             <div className="button-group">

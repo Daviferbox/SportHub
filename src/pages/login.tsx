@@ -4,21 +4,21 @@ import NavBar from '../components/NavBar';
 import { useNavigate } from "react-router-dom";
 import '../styles/login.css';
 import { api } from '../api';
+import Loading from '../components/Loading';
 
  
  
 function LoginForm() {
   const [senha, setSenha] = useState('');
   const [email, setEmail] = useState('');
-   const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   
   const navigate = useNavigate();
  
  
   // const [usuarios , setUsuarios] = useState<Usuarios[]>([]);
  
- 
-  // const [loading, setLoading] = useState(false);
+
  
   const handleSenhaChange = (e: ChangeEvent<HTMLInputElement>) => {
           setSenha(e.target.value)
@@ -69,7 +69,13 @@ function LoginForm() {
           </div>
             <div className="login-container">
                 <div className="button-group">
-                  <button className='login' onClick={handleLogin}>Login</button>  
+                     {loading && <Loading />}
+                    <button
+                   className='login'
+                    onClick={handleLogin}
+                    disabled={loading}>
+                      {loading ? 'Carregando...' : "Login"}
+                      </button>  
                   <div className="EsqueceuSenha">
                     <a href="/redefinirSenha" className="esqueceu">Esqueceu a senha?</a>
                     <a href="/register" className="cadastrar" onClick={handeleRegister}>Cadastrar</a>
