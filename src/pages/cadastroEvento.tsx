@@ -13,7 +13,7 @@ export default function CadastroEvento() {
   const [local, setLocal] = useState("");
   const [idade, setIdade] = useState("");
   const [esporte, setEsporte] = useState("");
-   const [loading,setLoading] = useState(false)
+  const [loading,setLoading] = useState(false)
  
   
     const handleNomeChange = (e: ChangeEvent<HTMLInputElement>) => {
