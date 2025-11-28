@@ -2,6 +2,8 @@
 import { useLocation, useParams } from "react-router-dom";
 import NavBar from "../components/NavBar";
 import type { Card } from "../types/cards";
+import Footer from "../components/Footer";
+import "../styles/detalhes.css";
 
 interface DetalhesEsporte {
   dias: string;
@@ -21,7 +23,7 @@ const detalhesEsportes: Record<number, DetalhesEsporte> = {
 const Detalhes = () => {
   const { id } = useParams<{ id: string }>();
   const location = useLocation();
-  const esporte = location.state as Card; // tipando o que vem da Home
+  const esporte = location.state as Card;
   const info = detalhesEsportes[Number(id)];
 
   if (!esporte || !info) {
@@ -29,22 +31,26 @@ const Detalhes = () => {
   }
 
   return (
-    <div className="detalhes-page">
+    <div className="det-page">
       <NavBar />
 
-      <div className="detalhes-container">
-        <h1>{esporte.title}</h1>
-        <img src={esporte.img} alt={esporte.title} className="detalhes-image" />
+      <div className="det-container">
+        <div className="det-card">
+          <h1 className="det-title">{esporte.title}</h1>
 
-        <div className="detalhes-info">
-          <p><strong>Dias:</strong> {info.dias}</p>
-          <p><strong>Horário:</strong> {info.horario}</p>
-          <p><strong>Contato:</strong> {info.contato}</p>
-          <p><strong>Faixa Etária:</strong> {info.faixa}</p>
+          <img src={esporte.img} alt={esporte.title} className="det-image" />
+
+          <div className="det-info">
+            <p><strong>Dias:</strong> {info.dias}</p>
+            <p><strong>Horário:</strong> {info.horario}</p>
+            <p><strong>Contato:</strong> {info.contato}</p>
+            <p><strong>Faixa Etária:</strong> {info.faixa}</p>
+          </div>
         </div>
       </div>
+
+      <Footer />
     </div>
-    
   );
 };
 

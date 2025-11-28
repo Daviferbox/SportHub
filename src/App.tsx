@@ -1,7 +1,7 @@
 import {  Routes, Route } from 'react-router-dom'
 import Home from './pages/home'
 import Login from './pages/login'
-import Detais from './pages/detais'
+import Detais from './pages/detalhes'
 import './App.css'
 import ListaCard from './components/ListaCard'
 import DetaisAll from './pages/detaisAll'
