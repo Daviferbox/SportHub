@@ -69,15 +69,7 @@ export default function CadastroEvento() {
                     
                 }
             };
- 
- 
- 
- 
- 
-  const enviar = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert("Evento cadastrado!");
-  };
+
  
   return (
     <div>
@@ -87,7 +79,7 @@ export default function CadastroEvento() {
       <div className="card">
         <h1>Cadastrar Evento</h1>
  
-        <form onSubmit={enviar}>
+       
           <label>Nome do Evento</label>
           <input
             placeholder="Ex: Torneio Sub-15"
@@ -148,7 +140,7 @@ export default function CadastroEvento() {
              {loading ? 'Carregando...' : 'Cadastrar Evento'}
             </button>
           </div>
-        </form>
+       
       </div>
     </div>
       <Footer />

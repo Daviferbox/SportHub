@@ -1,11 +1,10 @@
 import { useNavigate } from 'react-router-dom';
 import './NavBar.css';
-import { useState } from 'react'; // Importa o useState para controlar o input
+
 
 function NavBar() {
   // const location = useLocation();
   
-  const [searchTerm, setSearchTerm] = useState(''); // Estado para o termo de pesquisa
 
     // const params = useParams()
   const navigate = useNavigate()
@@ -19,6 +18,10 @@ function NavBar() {
 
   function handleDetais(){
     navigate('/detalhesGeral')
+  }
+
+  function handleEventos(){
+    navigate('/eventos')
   }
 
   function handleSobre(){
@@ -37,17 +40,11 @@ function NavBar() {
             <h3><img src="/lop.png" alt="SPORTHUB Logo" /> </h3>
           </div>            
         </div>
-          <div className="search-bar">
-              <input 
-                type="text" 
-                placeholder="Pesquisar..." 
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-              />
-          </div>
+         
         <div className="nav-links">
           <div onClick={handleHome} >Home</div>
-          <div onClick={handleDetais}>Detalhes</div>              
+          <div onClick={handleDetais}>Escolas</div> 
+          <div onClick={handleEventos}>Eventos</div>             
           <div onClick={handleSobre}>Sobre</div>              
           <div onClick={handleLogin}> Login</div>
           {/* <div onClick={handleRegister}>Cadastro</div> */}

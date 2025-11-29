@@ -1,9 +1,25 @@
 // src/components/Footer.tsx
 import { MapPin, Phone, Mail } from "lucide-react";
 import "../components/Footer.css";
-import { Link } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { UsuarioLogadoContext } from "../contexts/contextsAuth";
 
 const Footer = () => {
+
+  const navigate = useNavigate();
+
+  const ctxAuth = useContext(UsuarioLogadoContext);
+
+    const handleAdicionarEventos = () => {
+      if (ctxAuth && ctxAuth.email) {
+        navigate('/escolher-cadastro');
+      } else {
+        alert('É necessário estar logado para adicionar evento');
+      }
+    };
+
+  
   return (
     <footer className="footer">
       <div className="footer-content">
@@ -18,9 +34,11 @@ const Footer = () => {
       </div>
 
       <div className="footer-menu">
-        <Link to="/escolher-cadastro" className="footer-link">
+        <div className="footer-link"
+        onClick={handleAdicionarEventos}
+        >
         Adicionar Eventos / Escolas
-        </Link>
+        </div>
       </div>
 
       <div className="footer-bottom">

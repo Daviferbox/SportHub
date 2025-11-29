@@ -36,13 +36,16 @@
   margin-top: 15px;
 }
 
-.footer-link {
+  .footer-link {
   color: #00b4ff;
   font-weight: bold;
   text-decoration: none;
-  transition: 0.3s;
+  display: inline-block; /* importante para o scale funcionar */
+  transition: transform 0.25s ease-out, color 0.25s ease-out;
 }
 
 .footer-link:hover {
-  color: #00b4ff
+  transform: scale(1.08);
+  color: #00d0ff;
+  cursor: pointer;
 }

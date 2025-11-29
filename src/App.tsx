@@ -12,6 +12,7 @@ import RegistroForm from './pages/register'
 import CadastroEscola from './pages/cadastroEscola'
 import EscolhaCadastro from './pages/escolhaCadastro'
 import CadastroEvento from './pages/cadastroEvento'
+import ListaEventos from './pages/listaEventos'
 
 
 
@@ -34,6 +35,7 @@ function App() {
         <Route path='/escolher-cadastro' element={<EscolhaCadastro />} />
         <Route path='/cadastrar-escola' element={<CadastroEscola />} />
         <Route path='/cadastrar-evento' element={<CadastroEvento />} />
+        <Route path='/eventos' element={<ListaEventos/>} />
       </Routes> 
        </div> 
   

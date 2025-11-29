@@ -1,10 +1,11 @@
-import { useState, type ChangeEvent } from 'react';
+import { useContext, useState, type ChangeEvent } from 'react';
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import { useNavigate } from "react-router-dom";
 import '../styles/login.css';
 import { api } from '../api';
 import Loading from '../components/Loading';
+import { UsuarioLogadoContext } from '../contexts/contextsAuth';
 
  
  
@@ -12,6 +13,8 @@ function LoginForm() {
   const [senha, setSenha] = useState('');
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
+
+  const ctxAuth = useContext(UsuarioLogadoContext)
   
   const navigate = useNavigate();
  
@@ -38,7 +41,8 @@ function LoginForm() {
               const dataArray = Array.isArray(json) ? json : [json];
         
               console.log("Login feito com sucesso:", dataArray);
-        
+
+              ctxAuth?.setEmail(email);
             } catch (error) {
                 console.error("Erro para o login do usuario:", error);
                 alert("Ocorreu um erro ao login. Tente novamente.");

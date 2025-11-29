@@ -4,10 +4,14 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import "../styles/Home.css";
 import type { Card } from "../types/cards";
+import { useContext } from "react";
+import { UsuarioLogadoContext } from "../contexts/contextsAuth";
 
 
 
 function Home (){
+  
+  
   
   
   const cards: Card[] = [
