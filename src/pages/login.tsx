@@ -41,6 +41,7 @@ function LoginForm() {
               const dataArray = Array.isArray(json) ? json : [json];
         
               console.log("Login feito com sucesso:", dataArray);
+              alert('Login efetuado com sucesso')
 
               ctxAuth?.setEmail(email);
             } catch (error) {

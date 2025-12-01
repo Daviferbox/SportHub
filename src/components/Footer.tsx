@@ -39,11 +39,12 @@ const Footer = () => {
         >
         Adicionar Eventos / Escolas
         </div>
+
+          <hr />
+          <p>© {new Date().getFullYear()} SportHub. Todos os direitos reservados.</p>
       </div>
 
-      <div className="footer-bottom">
-        <p>© {new Date().getFullYear()} SportHub. Todos os direitos reservados.</p>
-      </div>
+      
     </footer>
   );
 };

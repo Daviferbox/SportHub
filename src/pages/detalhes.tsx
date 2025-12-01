@@ -31,7 +31,7 @@ const Detalhes = () => {
   }
 
   return (
-    <div className="det-page">
+    <div>
       <NavBar />
 
       <div className="det-container">
@@ -48,9 +48,9 @@ const Detalhes = () => {
           </div>
         </div>
       </div>
-
       <Footer />
-    </div>
+      </div>
+   
   );
 };
 

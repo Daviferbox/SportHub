@@ -44,7 +44,7 @@ function LoginForm() {
           </div>
 
           <div className="logo">
-          <img src="../src/assets/lop.png"></img>
+         <img src="/lop.png" alt="SPORTHUB Logo" />
           </div>
           
       </div><br /><br /><br />

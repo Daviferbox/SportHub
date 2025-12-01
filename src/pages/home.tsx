@@ -29,7 +29,7 @@ function Home (){
   };
 
   return (
-    <div className="fundo">
+    <div className="111">
     <NavBar />
     <div className="home-page">
       <div className="title">
