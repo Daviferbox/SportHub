@@ -69,7 +69,9 @@ function LoginForm() {
           </div>
           <div className="form-group-senha">
                Senha
-              <input type="password" value={senha}  onChange={handleSenhaChange} id="password" placeholder="Sua senha" />
+              <input type="password" value={senha}  onChange={handleSenhaChange} id="password" placeholder="Sua senha"  
+              
+              />
           </div>
             <div className="login-container">
                 <div className="button-group">

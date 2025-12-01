@@ -26,7 +26,7 @@ export const api = {
 
     CarregarLogin: async( emailUsuario: string, senhaUsuario:string) => {
         {
-            let response = await fetch('https://localhost:3000/usuarios/login',
+            let response = await fetch('http://localhost:3000/usuarios/login',
                 {
                        method: 'POST',
             body: JSON.stringify

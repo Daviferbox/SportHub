@@ -84,8 +84,8 @@ function RegistroForm() {
       <div className="informacoes">
           <div className="form-group-register">
             <div className="form-group-nome">
-                Nome da instituição <br />
-                <input type="text" value={nome} onChange={handleNomeChange} placeholder="Digite o nome da instituição" />
+                Nome do usuário <br />
+                <input type="text" value={nome} onChange={handleNomeChange} placeholder="Digite o nomedo usuário" />
             </div>
        
             <div className="form-group-responsavel">
