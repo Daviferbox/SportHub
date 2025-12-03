@@ -13,6 +13,7 @@ function LoginForm() {
   const [senha, setSenha] = useState('');
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
+  const [mostrarSenha, setMostrarSenha] = useState(false);
 
   const ctxAuth = useContext(UsuarioLogadoContext)
   
@@ -70,9 +71,19 @@ function LoginForm() {
           </div>
           <div className="form-group-senha">
                Senha
-              <input type="password" value={senha}  onChange={handleSenhaChange} id="password" placeholder="Sua senha"  
+               <input
+                            
+                            type={mostrarSenha ? "text" : "password"}
+                            value={senha}
+                            onChange={handleSenhaChange}
+                            placeholder="Sua senha"
+                        />
+
+                        <span className="eye-icon" onClick={() => setMostrarSenha(!mostrarSenha)}>
+                            {mostrarSenha ? "👁️‍🗨️" : "👁️"}
+                        </span>
               
-              />
+                
           </div>
             <div className="login-container">
                 <div className="button-group">
