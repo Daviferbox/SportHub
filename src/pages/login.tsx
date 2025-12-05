@@ -7,106 +7,106 @@ import { api } from '../api';
 import Loading from '../components/Loading';
 import { UsuarioLogadoContext } from '../contexts/contextsAuth';
 
- 
- 
 function LoginForm() {
   const [senha, setSenha] = useState('');
   const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
   const [mostrarSenha, setMostrarSenha] = useState(false);
 
-  const ctxAuth = useContext(UsuarioLogadoContext)
-  
+  const ctxAuth = useContext(UsuarioLogadoContext);
   const navigate = useNavigate();
- 
- 
-  // const [usuarios , setUsuarios] = useState<Usuarios[]>([]);
- 
 
- 
   const handleSenhaChange = (e: ChangeEvent<HTMLInputElement>) => {
-          setSenha(e.target.value)
-      }
- 
-  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {  
-          setEmail(e.target.value)
-      }
- 
-  const handleLogin = async () => {        
-        try {
-              setLoading(true);
-        
-              const json = await api.CarregarLogin( email,senha);
-        
-              // Apenas organiza o retorno
-              const dataArray = Array.isArray(json) ? json : [json];
-        
-              console.log("Login feito com sucesso:", dataArray);
-              alert('Login efetuado com sucesso')
+    setSenha(e.target.value);
+  };
 
-              ctxAuth?.setEmail(email);
-            } catch (error) {
-                console.error("Erro para o login do usuario:", error);
-                alert("Ocorreu um erro ao login. Tente novamente.");
-            } finally {
-                setLoading(false);
-            }  
-    }  
+  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
 
-  
-    const handeleRegister = () => {
-      navigate("/register");
-    };
- 
- 
+  const handleLogin = async () => {
+    try {
+      setLoading(true);
+
+      const json = await api.CarregarLogin(email, senha);
+
+      const dataArray = Array.isArray(json) ? json : [json];
+
+      console.log("Login feito com sucesso:", dataArray);
+      alert('Login efetuado com sucesso');
+
+      // ⬇️ ESSA É A PARTE QUE FALTAVA
+      ctxAuth?.setEmail(email);
+      ctxAuth?.setIsLogged(true);
+
+      navigate("/home"); // opcional: manda pra home depois de logar
+    } catch (error) {
+      console.error("Erro para o login do usuario:", error);
+      alert("Ocorreu um erro ao login. Tente novamente.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handeleRegister = () => {
+    navigate("/register");
+  };
+
   return (
-   <div className='fundo'>
-    <NavBar/><br />
-     
-      <div className="login-card"> {/* Este é o "card" que envolve tudo */}
-          <h2>Login</h2>
-          <div className="form-group-email">
-               E-mail
-              <input type="email" value={email} id="email" onChange={handleEmailChange} placeholder="Digite um e-mail" />
-          </div>
-          <div className="form-group-senha">
-               Senha
-               <input
-                            
-                            type={mostrarSenha ? "text" : "password"}
-                            value={senha}
-                            onChange={handleSenhaChange}
-                            placeholder="Sua senha"
-                        />
+    <div className='fundo'>
+      <NavBar /><br />
 
-                        <span className="eye-icon" onClick={() => setMostrarSenha(!mostrarSenha)}>
-                            {mostrarSenha ? "👁️‍🗨️" : "👁️"}
-                        </span>
-              
-                
-          </div>
-            <div className="login-container">
-                <div className="button-group">
-                     {loading && <Loading />}
-                    <button
-                   className='login'
-                    onClick={handleLogin}
-                    disabled={loading}>
-                      {loading ? 'Carregando...' : "Login"}
-                      </button>  
-                  <div className="EsqueceuSenha">
-                   
-                    <a href="/register" className="cadastrar" onClick={handeleRegister}>Cadastre-se</a>
-                  </div>
-               
-                </div>
+      <div className="login-card">
+        <h2>Login</h2>
+
+        <div className="form-group-email">
+          E-mail
+          <input
+            type="email"
+            value={email}
+            id="email"
+            onChange={handleEmailChange}
+            placeholder="Digite um e-mail"
+          />
+        </div>
+
+        <div className="form-group-senha">
+          Senha
+          <input
+            type={mostrarSenha ? "text" : "password"}
+            value={senha}
+            onChange={handleSenhaChange}
+            placeholder="Sua senha"
+          />
+
+          <span
+            className="eye-icon"
+            onClick={() => setMostrarSenha(!mostrarSenha)}
+          >
+            {mostrarSenha ? "👁️‍🗨️" : "👁️"}
+          </span>
+        </div>
+
+        <div className="login-container">
+          <div className="button-group">
+            {loading && <Loading />}
+
+            <button className='login' onClick={handleLogin} disabled={loading}>
+              {loading ? 'Carregando...' : "Login"}
+            </button>
+
+            <div className="EsqueceuSenha">
+              <a href="/register" className="cadastrar" onClick={handeleRegister}>
+                Cadastre-se
+              </a>
             </div>
+          </div>
+        </div>
       </div><br /><br />
-   
-       <Footer/>
-    </div>  
-    );
-  }
- 
-  export default LoginForm;
- 
+
+      <Footer />
+    </div>
+  );
+}
+
+export default LoginForm;
