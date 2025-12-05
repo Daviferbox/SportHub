@@ -95,8 +95,8 @@ function LoginForm() {
                       {loading ? 'Carregando...' : "Login"}
                       </button>  
                   <div className="EsqueceuSenha">
-                    <a href="/redefinirSenha" className="esqueceu">Esqueceu a senha?</a>
-                    <a href="/register" className="cadastrar" onClick={handeleRegister}>Cadastrar</a>
+                   
+                    <a href="/register" className="cadastrar" onClick={handeleRegister}>Cadastre-se</a>
                   </div>
                
                 </div>

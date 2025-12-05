@@ -1,55 +1,65 @@
 import { useNavigate } from 'react-router-dom';
 import './NavBar.css';
-
+import { useContext } from 'react';
+import { UsuarioLogadoContext } from '../contexts/contextsAuth';
 
 function NavBar() {
-  // const location = useLocation();
-  
+  const navigate = useNavigate();
+  const ctxAuth = useContext(UsuarioLogadoContext);
 
-    // const params = useParams()
-  const navigate = useNavigate()
-
-  function handleHome(){
-    navigate('/home')
-  }
-  function handleLogin(){
-    navigate('/login')
+  function handleHome() {
+    navigate('/home');
   }
 
-  function handleDetais(){
-    navigate('/detalhesGeral')
+  function handleLogin() {
+    navigate('/login');
   }
 
-  function handleEventos(){
-    navigate('/eventos')
+  function handleLogout() {
+    // limpa o usuário
+    ctxAuth?.setEmail("");
+    ctxAuth?.setIsLogged(false);
+
+    navigate('/home'); 
   }
 
-  function handleSobre(){
-    navigate('/sobre')
+  function handleDetais() {
+    navigate('/detalhesGeral');
   }
 
-  // function handleRegister(){
-  //   navigate('/register')
-  // }
+  function handleEventos() {
+    navigate('/eventos');
+  }
+
+  function handleSobre() {
+    navigate('/sobre');
+  }
 
   return (
     <div className="bar">
-      <nav>        
+      <nav>
         <div className="left-side">
           <div className="logo">
-            <h3><img src="/lop.png" alt="SPORTHUB Logo" /> </h3>
-          </div>            
+            <h3><img src="/lop.png" alt="SPORTHUB Logo" /></h3>
+          </div>
         </div>
-         
+
         <div className="nav-links">
-          <div onClick={handleHome} >Home</div>
-          <div onClick={handleDetais}>Escolas</div> 
-          <div onClick={handleEventos}>Eventos</div>             
-          <div onClick={handleSobre}>Sobre</div>              
-          <div onClick={handleLogin}> Login</div>
-          {/* <div onClick={handleRegister}>Cadastro</div> */}
-        </div>
+          <div onClick={handleHome}>Home</div>
+          <div onClick={handleDetais}>Escolas</div>
+          <div onClick={handleEventos}>Eventos</div>
+          <div onClick={handleSobre}>Sobre</div>
+
          
+          {!ctxAuth?.isLogged && (
+            <div onClick={handleLogin}>Login</div>
+          )}
+
+         
+          {ctxAuth?.isLogged && (
+            <div onClick={handleLogout}>Logout</div>
+          )}
+        </div>
       </nav>
     </div>
   );
