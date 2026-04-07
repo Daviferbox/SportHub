@@ -26,7 +26,7 @@ function RegistroForm() {
         
         {/* Lado esquerdo - formulário */}
         <div className="form-side">
-          <h2>Cadastro de Escolinhas</h2>
+          <h2>Cadastro de Escolinha</h2>
           <div className="form-container">
             <div className="form-group">
               <label htmlFor="nome">Nome</label>
